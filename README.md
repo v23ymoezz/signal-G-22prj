@@ -1,10 +1,10 @@
 # signal-G-22prj
 
-# Georgia 12-Lead ECG Challenge Database Analysis
-Introduction
+### Georgia 12-Lead ECG Challenge Database Analysis
+## Introduction
 This repository contains code for analyzing the Georgia 12-Lead ECG Challenge Database using machine learning techniques. The code focuses on building an LSTM-based deep learning model to classify ECG signals into different disease categories.
 
-Code Description
+## Code Description
 The provided code snippet performs the following tasks:
 
 Data Loading and Preprocessing: It loads ECG data from the Georgia 12-Lead ECG Challenge Database, preprocesses the data, and prepares it for model training.
@@ -15,7 +15,7 @@ Model Training and Evaluation: The model is trained on the prepared data and eva
 
 Visualization: The code generates visualizations, including ROC curves and confusion matrices, to assess model performance.
 
-Instructions
+## Instructions
 To use the code:
 
 Ensure you have Python installed on your system along with necessary dependencies such as TensorFlow, NumPy, Pandas, SciPy, Matplotlib, Seaborn, and Scikit-learn.
@@ -26,10 +26,10 @@ Set the directory to the location of the Georgia 12-Lead ECG Challenge Database.
 
 Execute the code in a Python environment capable of running deep learning models.
 
-Code Snippet
+## Code Snippet
 python
 Copy code
-# The main code snippet is provided in README.md.
+## The main code snippet is provided in README.md.
 Dependencies
 Python
 TensorFlow
@@ -44,6 +44,6 @@ Receiver Operating Characteristic (ROC) Curve
 
 Confusion Matrix
 
-About
+## About
 This code repository is part of a project aimed at developing a deep learning model for the analysis of ECG signals from the Georgia 12-Lead ECG Challenge Database. It can be further extended and customized for similar biomedical signal classification tasks.
 
