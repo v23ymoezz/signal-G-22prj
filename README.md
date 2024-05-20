@@ -28,6 +28,29 @@ Execute the code in a Python environment capable of running deep learning models
 
 ## Code Snippet
 python
+<h2>Code Snippet</h2>
+<pre><code>
+import numpy as np
+import pandas as pd
+import os
+from scipy.io import loadmat
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Dropout, Input
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score, roc_curve
+import matplotlib.pyplot as plt
+from keras.optimizers import Adam
+
+# Set directory
+os.chdir('/kaggle/input/georgia-12lead-ecg-challenge-database/WFDB')
+
+# Your code snippet goes here
+# ...
+
+</code></pre>
+
 Copy code
 ## The main code snippet is provided in README.md.
 Dependencies
