@@ -2,71 +2,34 @@
 
 ### Georgia 12-Lead ECG Challenge Database Analysis
 ## Introduction
-This repository contains code for analyzing the Georgia 12-Lead ECG Challenge Database using machine learning techniques. The code focuses on building an LSTM-based deep learning model to classify ECG signals into different disease categories.
+in this project we'll use deep learning to apply classification to the data we got, the Georgia 12-Lead ECG database . This training set contains 10,344 12-lead ECGs (male: 5,551, female: 4,793) of 10-second length with a sampling frequency of 500 Hz.
 
-## Code Description
-The provided code snippet performs the following tasks:
+this dataset has 122 different disease or heartbeat disorders
 
-Data Loading and Preprocessing: It loads ECG data from the Georgia 12-Lead ECG Challenge Database, preprocesses the data, and prepares it for model training.
+you can download the dataset from here
+## preprocessing
+since we have too many diseases , so we should concentrate on some of this diseases so first of all we looked through the .mat files which have the actual data and we found that almost all the data have a length of 5000 and only few records have length of 2500 so we've neglected the 2500 records
 
-Model Architecture: The code defines an LSTM-based neural network architecture using TensorFlow/Keras for binary classification of ECG signals.
+then we explored the.hea files and found that every disease has a special code or number so we've sorted the diseases and saw which are the most repeated disease so we choose the normal(sinus rhythm) and other five abnormal conditions
 
-Model Training and Evaluation: The model is trained on the prepared data and evaluated using various metrics such as accuracy, ROC AUC, and confusion matrix.
+then we've labled all the normal with [0] and any other index or disease with [1] and then sheffled the list
 
-Visualization: The code generates visualizations, including ROC curves and confusion matrices, to assess model performance.
+finally , we apllied normalization to the data [fit transform] so we can deal with it
 
-## Instructions
-To use the code:
+then the data was ready to be splitted into training and testing data and aplly the model
 
-Ensure you have Python installed on your system along with necessary dependencies such as TensorFlow, NumPy, Pandas, SciPy, Matplotlib, Seaborn, and Scikit-learn.
+## LSTM Model
+The first LSTM layer has 50 units (neurons) and expects input sequences with the shape (X_train.shape[1], X_train.shape[2]). X_train.shape[1] represents the number of time steps in each input sequence, and X_train.shape[2] represents the number of features in each time step.
+return_sequences=True indicates that this LSTM layer returns the full sequence of outputs for each input sequence, which is necessary when stacking LSTM layers.
+The second LSTM layer is similar to the first one but without return_sequences=True, as it only needs to return the final output.
 
-Clone this repository to your local machine.
+![image](https://github.com/v23ymoezz/signal-G-22prj/assets/169824542/a502050a-5432-48d4-bf45-d100714d11a7)
 
-Set the directory to the location of the Georgia 12-Lead ECG Challenge Database.
+## Result
+# concusion matrix 
+![image](https://github.com/v23ymoezz/signal-G-22prj/assets/169824542/2fae3fb3-959d-400f-b6fe-35f251bfa1c5)
+# ROC curve 
+ ![image](https://github.com/v23ymoezz/signal-G-22prj/assets/169824542/f54fbf15-02da-4f04-a55b-0462895cadb6)
 
-Execute the code in a Python environment capable of running deep learning models.
 
-## Code Snippet
-python
-<h2>Code Snippet</h2>
-<pre><code>
-import numpy as np
-import pandas as pd
-import os
-from scipy.io import loadmat
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout, Input
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import roc_auc_score, roc_curve
-import matplotlib.pyplot as plt
-from keras.optimizers import Adam
-
-# Set directory
-os.chdir('/kaggle/input/georgia-12lead-ecg-challenge-database/WFDB')
-
-# Your code snippet goes here
-# ...
-
-</code></pre>
-
-Copy code
-## The main code snippet is provided in README.md.
-Dependencies
-Python
-TensorFlow
-NumPy
-Pandas
-SciPy
-Matplotlib
-Seaborn
-Scikit-learn
-Visualizations
-Receiver Operating Characteristic (ROC) Curve
-
-Confusion Matrix
-
-## About
-This code repository is part of a project aimed at developing a deep learning model for the analysis of ECG signals from the Georgia 12-Lead ECG Challenge Database. It can be further extended and customized for similar biomedical signal classification tasks.
 
